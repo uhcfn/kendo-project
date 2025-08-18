@@ -1,0 +1,178 @@
+@import url('https://fonts.googleapis.com/css2?family=Zen+Kurenaido&display=swap');
+
+.main-hero-title {
+  font-family: 'Zen Kurenaido', 'Georgia', serif;
+}
+
+/* Главная страница — шапка с фоном и цитатой */
+/* Импорт шрифта перенесён в style.css */
+
+.main-hero-title {
+  padding: 0;
+  /* font-family убран, используется глобальный стиль */
+  font-size: 5rem;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  text-shadow: 0 2px 12px rgba(72, 65, 61, 0.08);
+  color: #fff;
+  text-align: left;
+  line-height: 2rem;
+  max-height: 140px;
+  height: 140px;
+}
+
+.main-hero-title p {
+  font-size: 1.2rem;
+  color: #fff;
+  line-height: 0;
+  letter-spacing: 0.06em;
+
+}
+
+.main-hero-title .end {
+  margin-bottom: 0;
+  margin-top: 50px;
+}
+
+.main-hero-title .start {
+  margin-top: 8px;
+  margin-bottom: 38px;
+}
+
+.content-card {
+  padding: 0;
+  overflow: hidden;
+}
+
+.main-hero {
+  height: 250px;
+  max-height: 250px;
+  min-height: 250px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+}
+
+.main-hero-bg {
+  position: absolute;
+  inset: 0;
+  background: url('img/main.jpg') center/cover no-repeat;
+  filter: brightness(0.6) grayscale(10%);
+  z-index: 1;
+}
+
+.main-hero-sec {
+  display: block;
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  min-width: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.39);
+}
+
+.main-hero-block {
+  max-width: 500px;
+  display: flex;
+  padding: 20px 0;
+  justify-content: center;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.main-hero-img {
+  max-height: 140px;
+}
+
+
+
+
+
+
+
+
+/* main-content */
+.main-content {
+  padding: 32px;
+}
+
+/* Кнопка Связаться с нами */
+.main-contact-btn-wrap {
+  display: flex;
+  justify-content: center;
+  margin-top: 32px;
+}
+
+.main-contact-btn {
+  display: inline-block;
+  color: #fff;
+  background: #ea595d;
+  font-size: 1.18rem;
+  font-weight: 500;
+  padding: 16px 38px;
+  border-radius: 20px;
+  text-decoration: none;
+  box-shadow: 0 2px 12px rgba(72, 65, 61, 0.10);
+  transition: box-shadow 0.2s, transform 0.2s;
+  border: none;
+}
+
+.main-contact-btn:hover,
+.main-contact-btn:focus {
+  box-shadow: 0 4px 18px rgba(72, 65, 61, 0.13);
+  transform: translateY(-2px) scale(1.04);
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+  padding: 0 2%;
+  margin: 50px 0;
+}
+
+.info-block__ {
+  background: #edecec;
+  box-shadow: 0 1px 4px rgba(72, 65, 61, 0.07);
+  border-radius: 12px;
+  border: 1px solid #e0e0e0;
+  padding: 40px 5%;
+  line-height: 2.3rem;
+  font-size: 1.35rem;
+  font-family: 'Manrope', 'Nunito', Arial, sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  color: #414141;
+}
+
+.info-block {
+  color: #222;
+  border-radius: 12px;
+  font-size: 1.15rem;
+  line-height: 1.6;
+}
+
+.info-block-news {
+  border-top: 2px solid #ddd;
+  padding: 40px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.info-block-news p {
+  max-width: 500px;
+  letter-spacing: 0.05rem;
+}
+
+a {
+  color: #bd0a10;
+}
+
+@media (min-width: 700px) {
+  .info-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}

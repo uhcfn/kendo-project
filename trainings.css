@@ -1,0 +1,204 @@
+@import url('https://fonts.googleapis.com/css2?family=Zen+Kurenaido&display=swap');
+@media (max-width: 750px) {}
+
+.training-status-panel,
+.training-schedule {
+  flex: 1 1 auto;
+  box-sizing: border-box;
+}
+
+.training-info-list {
+  flex: 1 1 100%;
+}
+
+@media (max-width: 750px) {
+  .training-top-row {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  .training-schedule {
+    flex: 0 0 100%;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    margin: 0 0 12px 0;
+  }
+
+  .training-status-panel {
+    width: 100%;
+    min-width: 100%;
+  }
+
+  .content-card {
+    padding: 30px 20px !important;
+  }
+
+}
+
+
+.content-card {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  padding: 60px 100px;
+}
+
+.training-top-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 50px;
+}
+
+.training-schedule {
+  border-radius: 12px;
+  background: #edecec;
+  box-shadow: 0 1px 4px rgba(72, 65, 61, 0.07);
+  border: 1px solid #e0e0e0;
+  padding: 14px 25px 20px 25px;
+}
+
+.schedule-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0;
+  font-size: 1.18em;
+  line-height: 2.1;
+  border-bottom: 1px solid #e0e0e0;
+  padding: 6px 0 6px 0;
+}
+
+.training-info-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.training-info-list li {
+  flex: 1 1 100%;
+  line-height: 2rem;
+  letter-spacing: 0.03rem;
+  font-size: 2rem;
+  font-family: 'Zen Kurenaido', 'Georgia', serif;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  color: #414141;
+}
+
+.training-map {
+  margin: 40px auto 0 auto;
+  width: 100%;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(72, 65, 61, 0.10);
+  aspect-ratio: 16/9;
+}
+
+.training-status-panel {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  background: #fff;
+  border-radius: 12px;
+  border: 4px dashed #ea595d;
+  padding: 18px 24px;
+  font-family: 'Zen Kurenaido', 'Georgia', serif;
+  font-size: 2em;
+  font-weight: 600;
+  color: #3d3d3d;
+  text-align: center;
+  z-index: auto;
+  box-sizing: border-box;
+  max-width: 45%;
+  line-height: 0.8;
+}
+
+.training-status-day {
+  display: block;
+  font-size: 1.5em;
+  font-weight: 400;
+  color: #888;
+  margin-bottom: 0.15em;
+  letter-spacing: 0.04em;
+}
+
+.training-status-time {
+  display: block;
+  font-size: 2em;
+  font-weight: 700;
+  color: #ea595d;
+  letter-spacing: 0.04em;
+  line-height: 1.1;
+}
+
+.training-header {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.training-header img {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  object-fit: cover;
+  background: #eee;
+}
+
+.training-section {
+  margin-bottom: 18px;
+}
+
+.training-section h3 {
+  margin: 0 0 8px 0;
+  font-size: 1.1em;
+  color: #ea595d;
+}
+
+.training-section img {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  object-fit: cover;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+.schedule-time {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.schedule-dot {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #4ecb6e;
+  margin-left: 8px;
+  margin-right: 5px;
+  box-shadow: 0 0 0 0 #4ecb6e;
+  transition: box-shadow 0.3s;
+}
+
+.schedule-dot.pulse {
+  animation: pulse-dot 1.2s infinite;
+}
+
+@keyframes pulse-dot {
+  0% {
+    box-shadow: 0 0 0 0 #4ecb6e;
+  }
+
+  70% {
+    box-shadow: 0 0 0 10px rgba(78, 203, 110, 0);
+  }
+
+  100% {
+    box-shadow: 0 0 0 0 #4ecb6e;
+  }
+}

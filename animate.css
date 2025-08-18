@@ -1,0 +1,13 @@
+.animate__animated { animation-duration: 1s; animation-fill-mode: both; }
+.animate__slideOutLeft { animation-name: slideOutLeft; }
+.animate__slideInRight { animation-name: slideInRight; }
+@keyframes slideOutLeft {
+  from { transform: translateX(0); }
+  to { transform: translateX(-200px); }
+}
+@keyframes slideInRight {
+  from { transform: translateX(200px); }
+  to { transform: translateX(0); }
+}
+/* Animate.css (только нужные классы) */
+.animate__animated { animation-duration: 1s; animation-fill-mode: both; }

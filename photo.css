@@ -1,0 +1,340 @@
+/* Кнопка-крестик закрытия модалки */
+.photo-modal-close-btn {
+  position: absolute;
+  top: 32px;
+  right: 32px;
+  width: 48px;
+  height: 48px;
+  background: rgba(30, 30, 30, 0.18);
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 12;
+  transition: background 0.2s, box-shadow 0.2s;
+  color: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
+  padding: 0;
+}
+
+.photo-modal-close-btn:hover {
+  background: rgb(30, 30, 30);
+}
+
+.photo-modal-close-btn svg {
+  width: 28px;
+  height: 28px;
+  display: block;
+}
+
+/* Стрелки в модалке */
+.photo-modal-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  background: rgba(30, 30, 30, 0.18);
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: background 0.2s, box-shadow 0.2s;
+  color: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
+  padding: 0;
+}
+
+.photo-modal-arrow--prev {
+  left: 24px;
+}
+
+.photo-modal-arrow--next {
+  right: 24px;
+}
+
+.photo-modal-arrow:hover {
+  background: rgb(30, 30, 30);
+}
+
+.photo-modal-arrow svg {
+  width: 28px;
+  height: 28px;
+  display: block;
+}
+
+.photo-modal {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+}
+
+body.photo-modal-blur-active>*:not(.photo-modal) {
+  filter: blur(16px) brightness(0.85) !important;
+  pointer-events: none !important;
+  user-select: none;
+  transition: filter 0.2s;
+}
+
+body.photo-modal-blur-active .photo-modal,
+body.photo-modal-blur-active .photo-modal * {
+  filter: none !important;
+  pointer-events: auto !important;
+  user-select: auto !important;
+}
+
+/* Модальное окно для фото */
+body.photo-modal-blur-active {
+  overflow: hidden !important;
+}
+
+html.photo-modal-blur-active>body>*:not(.photo-modal) {
+  filter: blur(16px) brightness(0.85) !important;
+  transition: filter 0.2s;
+  pointer-events: none !important;
+}
+
+.photo-modal {
+  display: none;
+  position: fixed;
+  z-index: 10000;
+  inset: 0;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.2s;
+  min-width: 0;
+  min-height: 0;
+  pointer-events: auto;
+  isolation: isolate;
+  background: none;
+}
+
+/* Слой блюра для модалки: прозрачный, с backdrop-filter */
+.photo-modal-blur {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(8px) brightness(0.85);
+  -webkit-backdrop-filter: blur(16px) brightness(0.85);
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+body.photo-modal-blur-active .photo-modal-blur {
+  opacity: 1;
+  pointer-events: auto;
+  display: block;
+}
+
+.photo-modal.open {
+  display: flex;
+}
+
+.photo-modal-img {
+  max-width: 96vw;
+  max-height: 92vh;
+  width: auto;
+  height: auto;
+  border-radius: 0;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18);
+  background: none;
+  display: block;
+  z-index: 1;
+}
+
+.photo-modal-close {
+  position: absolute;
+  top: 24px;
+  right: 36px;
+  color: #fff;
+  font-size: 2.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 2;
+  user-select: none;
+  transition: color 0.2s;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+}
+
+.photo-modal-close:hover {
+  color: #ff5252;
+}
+
+@media (max-width: 600px) {
+  .photo-gallery {
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 8px;
+  }
+
+  .gallery-img {
+    width: 100% !important;
+    aspect-ratio: 1/1 !important;
+    height: auto !important;
+    display: block;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  }
+}
+
+/* Стили для фото-галереи */
+
+.photo-gallery {
+  display: none;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px;
+  margin-top: 120px;
+  margin-bottom: 16px;
+  padding-top: 100px;
+  border-top: 2px solid #ddd;
+}
+
+.photo-gallery.visible {
+  display: grid;
+}
+
+.gallery-toggle-link {
+  display: block;
+  text-align: center;
+  color: #888;
+  font-size: 1.25rem;
+  margin: 24px 0 8px 0;
+  cursor: pointer;
+  text-decoration: underline dotted;
+  transition: color 0.2s;
+  user-select: none;
+}
+
+.gallery-toggle-link:hover {
+  color: #222;
+  text-decoration: underline;
+}
+
+.gallery-img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: transform 0.25s, box-shadow 0.25s;
+  cursor: pointer;
+}
+
+.gallery-img:hover {
+  transform: scale(1.06);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
+  z-index: 2;
+}
+
+.gallery-title {
+  text-align: center;
+  font-size: 2rem;
+  margin-top: 32px;
+  margin-bottom: 8px;
+  color: #222;
+  letter-spacing: 1px;
+}
+
+@media (max-width: 900px) {
+
+  .embla__button--prev,
+  .embla__button--next {
+    display: none !important;
+  }
+}
+
+/* === Embla Carousel styles (минимальный отступ, чисто как в hero-example) === */
+.embla {
+  max-width: 48rem;
+  margin: auto;
+  position: relative;
+}
+
+.embla__viewport {
+  overflow: hidden;
+  margin: 0px 40px 0px 40px;
+}
+
+
+.embla__container {
+  display: flex;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+
+.embla__slide {
+  flex: 0 0 40%;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 18rem;
+  margin-right: 0.5px;
+  box-sizing: border-box;
+  transition: transform 0.02s linear;
+}
+
+.embla__slide:last-child {
+  margin-right: 0;
+}
+
+
+
+/* Фото занимают всю область слайда, без внутренних отступов */
+.embla__slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.02s linear;
+  border-radius: 10px;
+}
+
+/* Кнопки-стрелки Embla по краям и по центру */
+.embla__buttons {
+  position: absolute;
+  top: 0;
+  left: -2.2rem;
+  right: -2.2rem;
+  width: auto;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.embla__button {
+  pointer-events: auto;
+  background: none;
+  color: #888;
+  display: inline-flex;
+  cursor: pointer;
+  border: none;
+  width: 2.8rem;
+  height: 2.8rem;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.15s;
+  box-shadow: none;
+  border-radius: 0;
+}
+
+.embla__button:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}

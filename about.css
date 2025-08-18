@@ -1,0 +1,225 @@
+@import url('https://fonts.googleapis.com/css2?family=Zen+Kurenaido&display=swap');
+
+/* Шрифт Zen Kurenaido для цитат и автора */
+.quote,
+.quote-author {
+  font-family: 'Zen Kurenaido', 'Georgia', serif;
+}
+
+.quote {
+  font-size: 2.2rem;
+  text-align: left;
+}
+
+.info-block__ {
+  background: #edecec;
+  box-shadow: 0 1px 4px rgba(72, 65, 61, 0.07);
+  border-radius: 12px;
+  border: 1px solid #e0e0e0;
+  padding: 40px 5%;
+  line-height: 2.3rem;
+  font-size: 1.35rem;
+  font-family: 'Manrope', 'Nunito', Arial, sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  color: #414141;
+}
+
+.info-block {
+  margin-top: 30px;
+}
+
+.about-subtitle {
+  margin: 0;
+  padding: 0;
+}
+
+.about-intro-title {
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: #2a3a4d;
+  margin-bottom: 1.2rem;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.about-accent {
+  color: #ea595d;
+  font-weight: 600;
+  background: #fff4f4;
+  border-radius: 6px;
+  padding: 0 0.2em;
+}
+
+.about-quote {
+  font-style: italic;
+  background: #fbeaea;
+  border-left: 4px solid #ea595d;
+  margin: 1.2em 0;
+  padding: 0.8em 1em;
+  border-radius: 10px;
+  color: #2a3a4d;
+  font-size: 1.08em;
+}
+
+.about-fact {
+  background: linear-gradient(90deg, #fff2f2 80%, #fbeaea 100%);
+  border: 1.5px dashed #ea595d;
+  border-radius: 12px;
+  margin-top: 2em;
+  padding: 1em 1.2em;
+  box-shadow: 0 2px 8px rgba(234, 89, 93, 0.07);
+}
+
+.about-fact-title {
+  font-weight: 700;
+  color: #ea595d;
+  margin-bottom: 0.5em;
+  font-size: 1.08em;
+  letter-spacing: 0.5px;
+}
+
+.about-fact-body {
+  color: #2a3a4d;
+  font-size: 1em;
+}
+
+.about-columns {
+  display: flex;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  position: relative;
+  display: flex;
+  gap: 0;
+}
+
+.about-col {
+  padding: 2rem 2.5rem;
+  flex: 1 1 0;
+  min-width: 280px;
+  max-width: 600px;
+  font-size: 1.08rem;
+  color: #222;
+  position: relative;
+}
+
+.about-col h2 {
+  margin-top: 0px;
+  margin-bottom: 1rem;
+  margin-left: 15px;
+  font-size: 1.35rem;
+  color: #2a3a4d;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+}
+
+.about-col p {
+  line-height: 1.7;
+  margin: 8px 0 20px 0;
+  padding: 0;
+}
+
+.about-divider {
+  width: 2px;
+  background: linear-gradient(to bottom, #ffffff 0%, #ea595d 100%);
+  margin: 0 0.5rem;
+  min-height: 100%;
+  align-self: stretch;
+  display: block;
+}
+
+@media (max-width: 700px) {
+  .about-columns {
+    flex-direction: column;
+  }
+
+  .about-divider {
+    display: none;
+  }
+
+  .about-col {
+    max-width: 100%;
+    padding: 1.2rem 0.7rem;
+    font-size: 1rem;
+  }
+}
+
+
+.main-hero {
+  position: relative;
+  min-height: 250px;
+  max-height: 250px;
+  height: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+}
+
+.main-hero-bg {
+  position: absolute;
+  inset: 0;
+  background: url('img/main.jpg') center/cover no-repeat;
+  filter: brightness(0.6) grayscale(10%);
+  z-index: 1;
+}
+
+.main-hero-quote {
+  display: block;
+  position: relative;
+  z-index: 2;
+  color: #ffffff;
+  min-width: 100%;
+  width: 100%;
+  min-height: 180px;
+  max-height: 180px;
+  height: 180px;
+  margin: 0;
+  background: rgba(0, 0, 0, 0.39);
+}
+
+.main-hero-quote blockquote {
+  max-width: 700px;
+  display: block;
+  margin-top: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: none;
+  text-align: center;
+  font-weight: 500;
+  line-height: 1;
+}
+
+.quote-mark {
+  font-size: 2.8rem;
+  font-family: 'Georgia', serif;
+  margin: 0 8px;
+  vertical-align: middle;
+  opacity: 0.9;
+  color: #ea595d;
+}
+
+.quote-author {
+  margin-top: 18px;
+  font-size: 1.1rem;
+  font-style: italic;
+  opacity: 0.9;
+  color: #ffffff;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: right;
+  padding: 0 16px;
+}
+
+.content-card {
+  padding: 0;
+  overflow: hidden;
+}
+
+.main-content {
+  padding: 32px;
+}
